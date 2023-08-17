@@ -30,6 +30,7 @@ $string['blocks_desc'] = 'HTML blocks consist of HTML code itself. Furthermore i
 $string['buttontext'] = 'Insert predefined HTML blocks';
 $string['dlgintro'] = 'Select one of these blocks to insert it at the current position. Placeholder texts can be modified once the block is inserted.';
 $string['dlginsert'] = 'Insert';
+$string['helplinktext'] = 'HTML Blocks';
 $string['labelaction'] = 'Action';
 $string['labelcat'] = 'Category';
 $string['labelname'] = 'Name';
