@@ -88,4 +88,39 @@ class config {
         }
         return $categories;
     }
+
+    public function get_blocks_for_editor(\core_course_category $category = null): array {
+        $blocks = json_decode(get_config(plugininfo::COMPONENT, 'items'), true);
+        if (!\is_array($blocks)) {
+            return [];
+        }
+
+        // Fetch all blocks and run format_string on its name to possibly apply the mlang filter when used in the name.
+        $blocks = array_map(function($b){ format_string(trim($b['name'])); return $b; }, $blocks);
+
+        // Filter now out all blocks, that have a category specified, where the edited item does not belong to.
+        // If on the user page or some other context, then all the blocks without any category setting are used. If
+        // we are on a course or course category page, use the category setting.
+        foreach (\array_keys($blocks) as $row) {
+            // The block has no category limitation.
+            if (empty($blocks[$row]['cat'])) {
+                continue;
+            }
+            // We are in a category and the html block has this category set as well, or any of its parents is
+            // defined as the html block.
+            if ($category !== null && (
+                    \in_array($category->id, $blocks[$row]['cat']) ||
+                    !empty(\array_intersect($category->get_parents(), $blocks[$row]['cat']))
+                )) {
+                continue;
+            }
+            // Either, we are on a page with a category but the current html block does not contain this
+            // category, or we are on a page with no category but the html block has set one.
+            unset($blocks[$row]);
+        }
+
+        // Return the values, so that the keys are again in ascending order starting with 0. Otherwise, that
+        // causes problems when iteration over the array in a mustache template.
+        return \array_values($blocks);
+    }
 }
