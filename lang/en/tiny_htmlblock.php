@@ -26,7 +26,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['blocks'] = 'HTML Blocks';
-$string['blocks_desc'] = 'HTML blocks consist of HTML code itself. Furthermore in the name field may contain an expression or short description to identify the purpose of this HTML block. When a category is selected, the HTML block in the editor will be shown only, if a course in this category hierarchy is edited.';
+$string['blocks_desc'] = 'HTML blocks consist of HTML code itself. Furthermore, the name field may contain an expression or short description to identify the purpose of this HTML block. When a category is selected, the HTML block in the editor will be shown only, if a course in this category hierarchy is edited.';
 $string['buttontext'] = 'Insert predefined HTML blocks';
 $string['dlgintro'] = 'Select one of these blocks to insert it at the current position. Placeholder texts can be modified once the block is inserted.';
 $string['dlginsert'] = 'Insert';
