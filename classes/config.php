@@ -89,6 +89,14 @@ class config {
         return $categories;
     }
 
+    /**
+     * Helper function that is used when the plugin is called during the setup of the editor. It fetches the HTML
+     * blocks from the settings, filters the entries by the category settings and returns a list of blocks that are
+     * used directly in the Javascript inside the editor.
+     * @param \core_course_category|null $category
+     * @return array
+     * @throws \dml_exception
+     */
     public function get_blocks_for_editor(\core_course_category $category = null): array {
         $blocks = json_decode(get_config(plugininfo::COMPONENT, 'items'), true);
         if (!\is_array($blocks)) {
