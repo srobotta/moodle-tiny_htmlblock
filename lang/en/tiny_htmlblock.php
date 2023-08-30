@@ -45,10 +45,6 @@ $string['tooltipadd'] = 'Add a new entry';
 $string['tooltipdel'] = 'Remove this entry';
 $string['tooltipdown'] = 'Move this entry down';
 $string['tooltipup'] = 'Move this entry up';
-$string['valid_children'] = 'TinyMCE setting valid_children';
-$string['valid_children_desc'] = 'This option enables you to control what child elements can exist within specified parent elements.
-By default there should be no changes necessary unless you define html blocks that break out of the html5 syntax.
-Get more information at https://www.tiny.cloud/docs/tinymce/6/content-filtering/#valid_children';
 
 // PRIVACY.
 $string['privacy:metadata'] = 'The Tiny HTML Blocks plugin does not store any personal data about any user.';

@@ -42,13 +42,6 @@ class config {
             [new \lang_string('maxcatlevels_all', plugininfo::COMPONENT), '1', '2', '3', '4', '5']
         ));
 
-        $settings->add(new \admin_setting_configtext(
-            plugininfo::COMPONENT . '/valid_children',
-            new \lang_string('valid_children', plugininfo::COMPONENT),
-            new \lang_string('valid_children_desc', plugininfo::COMPONENT),
-            ''
-        ));
-
         $htmlblocksetting = new admin_setting_htmlblock(
             plugininfo::COMPONENT . '/items',
             new \lang_string('blocks', plugininfo::COMPONENT),

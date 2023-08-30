@@ -25,7 +25,6 @@ import {getPluginOptionName} from 'editor_tiny/options';
 import {pluginName} from './common';
 
 const htmlblocks = getPluginOptionName(pluginName, 'htmlblocks');
-const valid_children = getPluginOptionName(pluginName, 'valid_children');
 
 /**
  * Register the options for the tiny_htmlblock plugin.
@@ -39,11 +38,6 @@ export const register = (editor) => {
     "default": [],
   });
 
-  editor.options.register(valid_children, {
-    processor: 'String',
-    "default": '',
-  });
-
 };
 
 /**
@@ -53,10 +47,3 @@ export const register = (editor) => {
  * @returns {array}
  */
 export const getHtmlBlocks = (editor) => editor.options.get(htmlblocks);
-
-/**
- * Get the valid_children setting from the plugin.
- * @param {TinyMCE.Editor} editor
- * @return {String}
- */
-export const getValidChildren = (editor) => editor.options.get(valid_children);

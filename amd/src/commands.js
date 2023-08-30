@@ -25,7 +25,7 @@ import {getButtonImage} from 'editor_tiny/utils';
 import {component} from './common';
 import {get_string as getString} from 'core/str';
 import {handleAction} from './ui';
-import {getHtmlBlocks, getValidChildren} from "./options";
+import {getHtmlBlocks} from "./options";
 
 /**
  * Get the setup function for the buttons.
@@ -51,8 +51,6 @@ export const getSetup = async() => {
         if (getHtmlBlocks(editor).length === 0) {
             return;
         }
-
-        editor.options.set('valid_children', getValidChildren(editor));
 
         // Register the Icon.
         editor.ui.registry.addIcon(component, buttonImage.html);

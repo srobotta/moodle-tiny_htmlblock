@@ -78,12 +78,6 @@ you will notice the change in the category selector of each HTML block.
 
 This setting has no effect when using the plugin while editing a text.
 
-#### TinyMCE setting valid_children
-
-This setting is directly used for the internal TinyMCE option `valid_children`. You may
-find a detailed description at the official
-[TinyMCE documentation](https://www.tiny.cloud/docs/tinymce/6/content-filtering/#valid_children).
-
 ### Technical background
 
 The HTML that can be defined in the admin area can contain any of the HTML elements that are
@@ -107,10 +101,8 @@ The plugin is still in development. Most of the general features work.
 
 What is missing/not working:
 
-- Using the following HTML block `<a href="..."><h4>My title</h4></a>` does not work when
-  the HTML is inserted into the editor. The anchor tags are stripped probably because in
-  older HTML block elements were not allowed inside inline elements. Even using the setting
-  `valid_children` did not solve the problem.
+- Insertion happens at the begining of the editor content, not at the end. This might be a
+  general issue as this has been reported for other plugins as well.
 - Links and other elements may need a placeholder (e.g. inserting a link to the current
   section) that the user can easily apply when using the HTML block during an edit. At the
   moment the link target must be placed inside the block definition istself or the user

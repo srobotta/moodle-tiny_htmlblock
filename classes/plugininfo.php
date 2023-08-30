@@ -76,7 +76,6 @@ class plugininfo extends plugin implements plugin_with_menuitems, plugin_with_bu
 
         return [
             'htmlblocks' => (new config())->get_blocks_for_editor($currentcat),
-            'valid_children' => get_config(self::COMPONENT, 'valid_children'),
         ];
     }
 }

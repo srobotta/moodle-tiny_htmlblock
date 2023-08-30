@@ -32,6 +32,7 @@ import {getHtmlBlocks} from "./options";
 
 const isNull = a => a === null || a === undefined;
 
+// The template for the modal dialogue.
 const TEMPLATE = {
   LIST: '<div class="tiny_htmlblock">' +
     '<p>{{intro}}</p>' +
@@ -70,11 +71,19 @@ const getStr = async() => {
 let  _modal;
 let _editor;
 
+/**
+ *
+ * @param {TinyMCE.Editor} editor
+ * @return {Promise<void>}
+ */
 const handleAction = async function(editor) {
+  // First call, they inject the editor and fetch the strings for the modal dialogue.
   if (!_editor) {
     _editor = editor;
-    await await getStr();
+    await getStr();
   }
+
+  // Create a modal dialogue.
   _modal = await ModalFactory.create({
     type: Modal.TYPE,
     title: STR.title,
@@ -84,7 +93,7 @@ const handleAction = async function(editor) {
     removeOnClose: true,
     large: true,
   });
-
+  // And set the footer and content for the modal dialogue.
   const footer = Mustache.render(TEMPLATE.FOOTER, {
     cancel: STR.btn_cancel,
     submit: STR.btn_insert,
@@ -96,12 +105,14 @@ const handleAction = async function(editor) {
   _modal.setBody(contentText);
   _modal.setFooter(footer);
   _modal.show();
+  // There are two buttons "insert" and "cancel" that must have a event handler attached to them.
   _modal.registerEventListeners();
   _modal.registerCloseOnSave();
   _modal.registerCloseOnCancel();
   const $root = _modal.getRoot();
   $root.on(ModalEvents.save, insertHandler);
   $root.on(ModalEvents.cancel, closeHandler);
+  // And an additional event handler for selecting one item in the list of HTML blocks.
   $root.get(0).querySelectorAll('li').forEach(el => {
     el.addEventListener('click', evt => {
       evt.preventDefault();
@@ -124,18 +135,24 @@ const handleAction = async function(editor) {
   });
 };
 
-const insertHandler = function (e) {
+/**
+ * Insert the selected html block and close the dialogue afterwards.
+ */
+const insertHandler = function () {
   const li = document.querySelector('li.hbitem.selected');
   if (!isNull(li)) {
-    _editor.execCommand('mceInsertContent', false, li.innerHTML);
+    li.querySelectorAll('*[id^="yui_"]').forEach(e => e.removeAttribute('id'));
+    _editor.execCommand('mceInsertContent', false, '<span class="marker_insert_htmlblock">marker</span>');
+    const span = _editor.dom.select('span.marker_insert_htmlblock');
+    _editor.dom.setOuterHTML(span, li.innerHTML);
   }
-  closeHandler(e);
+  closeHandler();
 };
 
-const closeHandler = function (e) {
-  if (e) {
-    // noop;
-  }
+/**
+ * Destroy and unset the modal dialogue.
+ */
+const closeHandler = function () {
   _modal.destroy();
   _modal = null;
 };
