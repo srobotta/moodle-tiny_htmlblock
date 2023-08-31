@@ -58,4 +58,3 @@ Feature: Tiny editor admin settings for htmlblock plugin
     And I click on "Insert" "button" in the "Tiny HTML Blocks" "dialogue"
     When I click on "Update profile" "button"
     Then I should see "Go homez"
-

@@ -24,6 +24,10 @@
 
 namespace tiny_htmlblock;
 
+/**
+ * Helper class to handle the settings for the plugin. This class contains the handling of the request
+ * from the admin page as well as fetching the html blocks for an editor instance.
+ */
 class config {
 
     /**
@@ -86,21 +90,21 @@ class config {
 
     /**
      * Return a list of categories to select from. Observe that only categories of a certain level are included,
-     * if the setting maxcatlevels is > 0. Also if an category id is in $keep_selected, then the category is contained,
+     * if the setting maxcatlevels is > 0. Also if an category id is in $keepselected, then the category is contained,
      * even though it might be at a lower level than desired.
      *
-     * @param int[] $keep_selected
+     * @param int[] $keepselected
      * @return array
      * @throws \dml_exception
      */
-    public function get_category_list(?array $keep_selected = []): array {
+    public function get_category_list(?array $keepselected = []): array {
         $categories = [];
         $delimiter = '~+!~';
         $level = (int)get_config(plugininfo::COMPONENT, 'maxcatlevels');
-        $keep_selected = \array_flip($keep_selected);
+        $keepselected = \array_flip($keepselected);
         foreach (\core_course_category::make_categories_list('', 0, $delimiter) as $id => $cat) {
             $id = (int)$id;
-            if (!isset($keep_selected[$id]) && $level > 0) {
+            if (!isset($keepselected[$id]) && $level > 0) {
                 // Count the delimiters, between one category: Main / sub 1 contains one delimiter and is on level 2.
                 $catlevel = substr_count($cat, $delimiter);
                 if ($catlevel + 1 > $level) {  // If the current level exceeds the desired level, do not include item in list.
@@ -119,8 +123,7 @@ class config {
      * @return array
      * @throws \dml_exception
      */
-    public function get_blocks_from_setting(): array
-    {
+    public function get_blocks_from_setting(): array {
         $blocks = $this->read_items_from_file();
         if (!\is_array($blocks)) {
             $blocks = json_decode(get_config(plugininfo::COMPONENT, 'items'), true);

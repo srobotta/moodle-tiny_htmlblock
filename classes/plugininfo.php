@@ -32,6 +32,10 @@ use editor_tiny\plugin_with_configuration;
  */
 class plugininfo extends plugin implements plugin_with_menuitems, plugin_with_buttons, plugin_with_configuration {
 
+    /**
+     * The internal name of the plugin.
+     * @var string
+     */
     public const COMPONENT = 'tiny_htmlblock';
 
     /**

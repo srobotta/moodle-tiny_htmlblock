@@ -1,14 +1,14 @@
 .tiny_htmlblock li {
-    border: 1px solid #AAAAAA;
+    border: 1px solid #aaa;
     margin-bottom: 0.5rem;
     padding: 3px;
     list-style: none;
     margin-left: -2rem;
 }
 .tiny_htmlblock li:hover {
-    border: 1px solid #777777;
+    border: 1px solid #777;
 }
 .tiny_htmlblock li.selected {
-    border: 1px solid #777777;
-    background-color: #cccccc;
+    border: 1px solid #777;
+    background-color: #ccc;
 }

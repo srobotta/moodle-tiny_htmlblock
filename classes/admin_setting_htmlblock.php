@@ -54,6 +54,7 @@ class admin_setting_htmlblock extends admin_setting {
     private $config;
 
     /**
+     * Setter for the config object.
      * @param config $config
      * @return admin_setting_htmlblock
      */
@@ -125,13 +126,13 @@ class admin_setting_htmlblock extends admin_setting {
                 $value = $htmlblocks[$i][$field] ?? '';
                 // The cat is a selection field with multiple possible values.
                 if ($field === 'cat') {
-                    $selectedIds = \is_array($value) ? $value : [];
+                    $selectedids = \is_array($value) ? $value : [];
                     $value = [];
-                    foreach ($this->get_config()->get_category_list($selectedIds) as $catid => $catname) {
+                    foreach ($this->get_config()->get_category_list($selectedids) as $catid => $catname) {
                         $value[] = [
                             'id' => (int)$catid,
                             'name' => $catname,
-                            'isselected' => (bool)count(array_filter($selectedIds, fn($selid) => $selid === $catid)),
+                            'isselected' => (bool)count(array_filter($selectedids, fn($selid) => $selid === $catid)),
                         ];
                     }
                 }

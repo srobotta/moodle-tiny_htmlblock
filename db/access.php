@@ -18,7 +18,7 @@
  * Plugin for Moodle HTML Block drop down menu in TinyMCE 6.
  *
  * @package   tiny_htmlblock
- * @author    Stephan Robotta <stephan.robotta@bfh.ch>
+ * @copyright 2023 Stephan Robotta <stephan.robotta@bfh.ch>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

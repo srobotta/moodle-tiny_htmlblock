@@ -68,7 +68,7 @@ const getStr = async() => {
   });
 };
 
-let  _modal;
+let _modal;
 let _editor;
 
 /**
@@ -138,7 +138,7 @@ const handleAction = async function(editor) {
 /**
  * Insert the selected html block and close the dialogue afterwards.
  */
-const insertHandler = function () {
+const insertHandler = function() {
   const li = document.querySelector('li.hbitem.selected');
   if (!isNull(li)) {
     li.querySelectorAll('*[id^="yui_"]').forEach(e => e.removeAttribute('id'));
@@ -152,7 +152,7 @@ const insertHandler = function () {
 /**
  * Destroy and unset the modal dialogue.
  */
-const closeHandler = function () {
+const closeHandler = function() {
   _modal.destroy();
   _modal = null;
 };
