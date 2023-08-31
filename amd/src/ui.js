@@ -144,7 +144,7 @@ const insertHandler = function () {
     li.querySelectorAll('*[id^="yui_"]').forEach(e => e.removeAttribute('id'));
     _editor.execCommand('mceInsertContent', false, '<span class="marker_insert_htmlblock">marker</span>');
     const span = _editor.dom.select('span.marker_insert_htmlblock');
-    _editor.dom.setOuterHTML(span, li.innerHTML);
+    _editor.dom.setOuterHTML(span, li.innerHTML + ' ');
   }
   closeHandler();
 };
