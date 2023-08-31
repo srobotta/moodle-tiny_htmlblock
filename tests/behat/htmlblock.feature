@@ -35,6 +35,7 @@ Feature: Tiny editor admin settings for htmlblock plugin
     And I open my profile in edit mode
     And I wait until the page is ready
     When I click on the "Insert > HTML blocks" menu item for the "Description" TinyMCE editor
+    And I wait "1" seconds
     Then I should see "Go home X"
     And I should not see "Text framed"
     And I click on "Cancel" "button" in the "Tiny HTML Blocks" "dialogue"
@@ -43,6 +44,7 @@ Feature: Tiny editor admin settings for htmlblock plugin
     And I edit the section "1"
     And I wait until the page is ready
     And I click on the "Insert > HTML blocks" menu item for the "Summary" TinyMCE editor
+    And I wait "1" seconds
     Then I should see "Go home X"
     And I should see "Text framed"
 
