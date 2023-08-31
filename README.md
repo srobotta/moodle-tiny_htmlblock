@@ -95,18 +95,26 @@ depending on the class hierarchy at the current position. This counts even more 
 te HTML in the editor in the modal dialogue. Therefore, it is recommended to use inline styles
 that are placed inside the `style` attributes of an element.
 
+#### Settings for the HTML blocks
+
+The settings are stored in the database in the config table of the plugins (like any other
+setting). However, the settings value is stored in a text field that has a maximum length of
+65535 bytes in a MySQL database (Postgres and Oracle may tolerate a higher limit). The value
+of the `items` setting contains all HTML blocks that are defined. The so encoded json string
+might exceed the maximum length allowed in the database. This might happend when many
+inline images (with base64 encoded data) are used. Therefore, the value is also written
+into a file at `/dir/to/moodledata/tiny_htmlblock.json`.
+
 ## Current status and future improvements
 
 The plugin is still in development. Most of the general features work.
 
 What is missing/not working:
 
-- Insertion happens at the begining of the editor content, not at the end. This might be a
-  general issue as this has been reported for other plugins as well.
 - Links and other elements may need a placeholder (e.g. inserting a link to the current
   section) that the user can easily apply when using the HTML block during an edit. At the
-  moment the link target must be placed inside the block definition istself or the user
-  must switch to the source mode (and loosing the advantage of an easy handling without
+  moment the link target must be placed inside the block definition itself or the user
+  must switch to the source mode (and losing the advantage of an easy handling without
   interacting with the HTML itself).
 - Classification of blocks with tags. If there is a huge list of possible HTML blocks to
   pick from, using a click on one of the tags above the list would filter the entries by

@@ -90,12 +90,9 @@ class admin_setting_htmlblock extends admin_setting {
             $this->get_setting_val_from_request();
             $htmlblocks = $this->settingval;
         } else {
-            // Assume here that we got a json from the config out of the DB.
-            if ($data) {
-                $htmlblocks = json_decode($data, true);
-                if (!is_array($htmlblocks)) {
-                    $htmlblocks = [];
-                }
+            // Assume here that we read the json from the config and have a valid array.
+            if (\is_array($data) && isset($data[0]) && isset($data[0]['html'])) {
+                $htmlblocks = $data;
             } else {
                 $htmlblocks = [];
             }
@@ -203,10 +200,7 @@ class admin_setting_htmlblock extends admin_setting {
      * @return false|mixed|string|null
      */
     public function get_setting() {
-        if ($this->settingval !== null) {
-            return json_encode($this->settingval);
-        }
-        return $this->config_read($this->name);
+        return $this->settingval ?? (new config())->get_blocks_from_setting();
     }
 
     /**
@@ -222,6 +216,7 @@ class admin_setting_htmlblock extends admin_setting {
         if ($this->validate() !== true) {
             return false;
         }
+        (new config())->write_items_to_file($data);
         return ($this->config_write($this->name, json_encode($data)) ? '' : get_string('errorsetting', 'admin'));
     }
 }

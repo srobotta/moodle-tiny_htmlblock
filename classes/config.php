@@ -53,6 +53,38 @@ class config {
     }
 
     /**
+     * File name where to store the settings, because they can extend the max size of the text field in the DB.
+     * @return string
+     */
+    protected function get_config_file(): string {
+        global $CFG;
+        return $CFG->dataroot . DIRECTORY_SEPARATOR . 'tiny_htmlblock.json';
+    }
+
+    /**
+     * Get the config of the html blocks from the file.
+     * @return array|null
+     */
+    protected function read_items_from_file(): ?array {
+        $data = file_get_contents($this->get_config_file());
+        if ($data) {
+            return json_decode($data, true);
+        }
+        return null;
+    }
+
+    /**
+     * Write the item settings to the file.
+     * @param array $data
+     * @return void
+     */
+    public function write_items_to_file(array $data) {
+        if (!file_put_contents($this->get_config_file(), json_encode($data))) {
+            throw new \RuntimeException('Can not save tiny_htmlblock settings into file ' . $this->get_config_file());
+        }
+    }
+
+    /**
      * Return a list of categories to select from. Observe that only categories of a certain level are included,
      * if the setting maxcatlevels is > 0. Also if an category id is in $keep_selected, then the category is contained,
      * even though it might be at a lower level than desired.
@@ -83,6 +115,23 @@ class config {
     }
 
     /**
+     * Get blocks from file or database setting.
+     * @return array
+     * @throws \dml_exception
+     */
+    public function get_blocks_from_setting(): array
+    {
+        $blocks = $this->read_items_from_file();
+        if (!\is_array($blocks)) {
+            $blocks = json_decode(get_config(plugininfo::COMPONENT, 'items'), true);
+            if (!\is_array($blocks)) {
+                return [];
+            }
+        }
+        return $blocks;
+    }
+
+    /**
      * Helper function that is used when the plugin is called during the setup of the editor. It fetches the HTML
      * blocks from the settings, filters the entries by the category settings and returns a list of blocks that are
      * used directly in the Javascript inside the editor.
@@ -91,10 +140,8 @@ class config {
      * @throws \dml_exception
      */
     public function get_blocks_for_editor(\core_course_category $category = null): array {
-        $blocks = json_decode(get_config(plugininfo::COMPONENT, 'items'), true);
-        if (!\is_array($blocks)) {
-            return [];
-        }
+        // First fetch the setting with the html blocks.
+        $blocks = $this->get_blocks_from_setting();
 
         // Fetch all blocks and run format_string on its name to possibly apply the mlang filter when used in the name.
         $blocks = array_map(function($b){ format_string(trim($b['name'])); return $b; }, $blocks);
