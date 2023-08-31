@@ -25,8 +25,7 @@
 namespace tiny_htmlblock;
 
 /**
- * Helper class to handle the settings for the plugin. This class contains the handling of the request
- * from the admin page as well as fetching the html blocks for an editor instance.
+ * Helper class to handle the settings for the plugin.
  */
 class config {
 
@@ -70,7 +69,7 @@ class config {
      * @return array|null
      */
     protected function read_items_from_file(): ?array {
-        $data = file_get_contents($this->get_config_file());
+        $data = @file_get_contents($this->get_config_file());
         if ($data) {
             return json_decode($data, true);
         }
@@ -147,7 +146,13 @@ class config {
         $blocks = $this->get_blocks_from_setting();
 
         // Fetch all blocks and run format_string on its name to possibly apply the mlang filter when used in the name.
-        $blocks = array_map(function($b){ format_string(trim($b['name'])); return $b; }, $blocks);
+        $blocks = array_map(
+            function($b){
+                format_string(trim($b['name']));
+                return $b;
+            },
+            $blocks
+        );
 
         // Filter now out all blocks, that have a category specified, where the edited item does not belong to.
         // If on the user page or some other context, then all the blocks without any category setting are used. If
