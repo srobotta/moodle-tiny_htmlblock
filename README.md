@@ -1,6 +1,8 @@
 # Moodle Tiny editor HTML Block plugin
 
+![Release](https://img.shields.io/badge/Release-1.0-blue.svg)
 ![Supported](https://img.shields.io/badge/Moodle-4.1+-orange.svg)
+[![Moodle Plugin CI](https://github.com/srobotta/moodle-tiny_htmlblock/workflows/Moodle%20Plugin%20CI/badge.svg?branch=master)](https://github.com/srobotta/moodle-tiny_htmlblock/actions?query=workflow%3A%22Moodle+Plugin+CI%22+branch%3Amaster)
 [![License GPL-3.0](https://img.shields.io/github/license/srobotta/moodle-tiny_htmlblock?color=lightgrey)](https://github.com/srobotta/moodle-tiny_htmlblock/blob/master/LICENSE)
 [![GitHub contributors](https://img.shields.io/github/contributors/srobotta/moodle-tiny_htmlblock)](https://github.com/srobotta/moodle-tiny_htmlblock/graphs/contributors)
 
