@@ -81,9 +81,15 @@ category hierarchy.
 
 #### Category levels to show
 
-The setting of the category level may shrink the list of categories for each HTML blocks to
-a certain level of categories only. If you distinguish the HTML blocks for the courses be the
-main category, you may set the level to 1.
+The setting of the category level may shrink the list of categories for each HTML block to
+a certain level of categories only. If HTML blocks are classified to be used in certain
+courses only (e.g. they contain a certain style or colour), the block can be classified
+by defining one or more categories where it can be used if a course exists within that
+category hierarchy. Thus, the list of blocks to be inserted can be limited and offers these
+items only, that are suited for that course.
+
+If the courses can be distinguished by the the top category level, then set 1 here and in
+the HTML block items the top level categories are shown only.
 
 Once you click save, the setting is stored. When the page is reloaded with the new setting
 you will notice the change in the category selector of each HTML block.
