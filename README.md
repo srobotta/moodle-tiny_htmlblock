@@ -12,10 +12,9 @@ in Moodle.
 ## Overview
 
 To design Moodle courses in an appealing way, a good design is required. This demands
-some knowledge in HTML. In contrast, most teachers lack knowledge in web technologies if
-they are involved in non-technical subjects.
-Also, less technical experienced teacher try to avoid the source code view of
-the editor and rather rely on the WYSIWYG mode.
+some knowledge in HTML. In contrast, many teachers lack the knowledge in web technologies
+such as HTML to design a course. Also, less technical experienced users try to avoid the
+source code view of the editor and rather rely on the WYSIWYG mode.
 
 In addition, even though having different courses, the look and feel should be very similar
 throughout Moodle and should follow the corporate design. This requires that the courses are
@@ -35,13 +34,22 @@ the need to modify the HTML itself.
 
 ## Usage
 
-When a text area is edited a new button appears with the HTML symbol. Clicking this button
-opens a modal dialogue where all the predefined HTML blocks are listed. The user may click on
-one (it gets selected) and then click the "Insert" button to actually insert the HTML at the
-current cursor position in the text. The so inserted content can later be changed or entirely
-removed like with any other elements in the editor. The behaviour is pretty much comparable
-to the workflow of inserting a special char, with the difference that a bigger design element
-is inserted.
+When a text area is edited a new toolbar button appears with the HTML symbol. In addition
+In the menu *Insert* -> *HTML blocks* appears.
+
+![editor menu for HTML blocks](screenshots/01_editor.png)
+
+Both, clicking the toolbar button or the menu item opens a modal dialogue
+where all the predefined HTML blocks are listed. The user may click on one
+(it gets selected) and then click the *Insert* button to actually insert
+the HTML at the current cursor position in the text.
+
+![dialogue with the HTML blocks to select](screenshots/02_dialogue.png)
+
+The so inserted content can later be changed or entirely
+removed like any other elements in the editor. The behaviour is pretty much
+comparable to the workflow of inserting a special char, with the difference
+that a more complex design element is inserted.
 
 ## Detailed description
 
@@ -50,13 +58,15 @@ However, a few refinements can be applied and limitations must be observed.
 
 ### Admin Settings
 
+![Admin settings](screenshots/03_admin_settings.png)
+
 #### HTML blocks
 
-All html blocks are displayed in a list. In addition to the HTML itself, each entry may also
-contain:
+All html blocks are displayed in a list. In addition to the HTML itself, each
+entry may also contain:
 
-- A descriptive name (used in a tool tip when hovering over the list in the modal dialogue)
-- A category setting
+* A descriptive name (used in a tool tip when hovering over the list in the modal dialogue)
+* A category setting
 
 The category setting limits the HTML block being listed on course pages only. Furthermore, with
 the category setting, different HTML blocks are possible for different categories. This might be
