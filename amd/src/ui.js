@@ -15,7 +15,6 @@
 
 import ModalEvents from 'core/modal_events';
 import ModalFactory from 'core/modal_factory';
-import Modal from "core/modal";
 import Mustache from 'core/mustache';
 import {get_string as getString} from 'core/str';
 import {component} from './common';
@@ -85,7 +84,6 @@ const handleAction = async function(editor) {
 
   // Create a modal dialogue.
   _modal = await ModalFactory.create({
-    type: Modal.TYPE,
     title: STR.title,
     templateContext: {
       elementid: _editor.id
