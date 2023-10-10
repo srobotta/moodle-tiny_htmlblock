@@ -1,6 +1,6 @@
 # Moodle Tiny editor HTML Block plugin
 
-![Release](https://img.shields.io/badge/Release-1.0-blue.svg)
+![Release](https://img.shields.io/badge/Release-1.1-blue.svg)
 ![Supported](https://img.shields.io/badge/Moodle-4.1+-orange.svg)
 [![Moodle Plugin CI](https://github.com/srobotta/moodle-tiny_htmlblock/workflows/Moodle%20Plugin%20CI/badge.svg?branch=master)](https://github.com/srobotta/moodle-tiny_htmlblock/actions?query=workflow%3A%22Moodle+Plugin+CI%22+branch%3Amaster)
 [![License GPL-3.0](https://img.shields.io/github/license/srobotta/moodle-tiny_htmlblock?color=lightgrey)](https://github.com/srobotta/moodle-tiny_htmlblock/blob/master/LICENSE)
@@ -26,8 +26,8 @@ the need to modify the HTML itself.
 
 ## Installation
 
-- Copy repository content in `*moodleroot*/lib/editor/tiny/plugins`. Make sure that the directory
-  inside the editor plugins is called `htmlblock`. 
+- Create a new directory `htmlblock` inside the directory `*moodleroot*/lib/editor/tiny/plugins`.
+- Copy repository content into the newly created directory.
 - Install the plugin via the Moodle upgrade page.
 - Go to "Site administration" -> Tab "Plugins" -> "Text editors" -> "Predefine HTML Blocks for TinyMCE"
   and define at least one HTML block.
@@ -137,3 +137,13 @@ What is missing/not working:
 - Classification of blocks with tags. If there is a huge list of possible HTML blocks to
   pick from, using a click on one of the tags above the list would filter the entries by
   that specific tag.
+
+## Version History
+
+### 1.1
+- Fix compatibility issue with Moodle 4.3
+- Add CI stack for Moodle 4.3
+
+### 1.0
+
+Initial release waiting for approval
