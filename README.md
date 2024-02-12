@@ -34,10 +34,13 @@ the need to modify the HTML itself.
 
 ## Usage
 
-When a text area is edited a new toolbar button appears with the HTML symbol. In addition
-In the menu *Insert* -> *HTML blocks* appears.
+When a text area is edited a new toolbar button appears with the HTML symbol.
 
-![editor menu for HTML blocks](screenshots/01_editor.png)
+![editor with toolbar icon for HTML blocks](screenshots/01_editor.png)
+
+In addition, in the menu *Insert* -> *HTML blocks* appears.
+
+![editor with menu item for HTML blocks](screenshots/01_editor_menu.png)
 
 Both, clicking the toolbar button or the menu item opens a modal dialogue
 where all the predefined HTML blocks are listed. The user may click on one
