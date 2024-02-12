@@ -1,36 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   xmlns="http://www.w3.org/2000/svg"
-   version="1.1"
-   id="svg2"
-   width="64"
-   height="64"
-   viewBox="0 0 16 16">
-  <g
-     id="layer1">
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 1.8099907,0.7212821 C 1.7917492,0.83304004 0.10003263,7.7136185 0.10003263,7.7136185 l 2.06917047,7.9605305 0.00676,-0.0025 -1.54960902,-7.9188453 z"
-       id="path9" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 14.130768,0.70985455 15.99049,7.708406 13.822254,15.658227 15.422589,7.7549935 Z"
-       id="path11" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 3.015779,2.0122042 0.039716,5.2734358 0.4968422,0.00415 0.044823,-2.6093688 2.9799542,0.026231 0.055958,2.564736 0.566396,0.00341 L 7.1805466,2.0383218 6.6698557,2.0218098 6.5603039,4.2723155 3.6125465,4.3012735 3.522891,2.0480181 Z"
-       id="path13" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 9.0028361,1.9607829 -0.037664,0.8270566 1.5738509,0.1075964 0.179111,4.3832769 0.638981,-0.00558 0.167219,-4.3976389 1.805521,-0.1063586 0.0068,-0.775985 z"
-       id="path15" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 2.9424421,14.367624 -0.07844,-6.0158892 0.9148417,0.010326 1.3192287,1.9085312 1.3979629,-1.8785007 0.8402407,0.035597 -0.039407,5.9688207 -0.2182743,-0.0508 -0.6014244,0.0141 -0.015744,-4.344445 -1.3549668,0.802333 -1.3117744,-0.781482 -0.1447446,4.34374 z"
-       id="path17" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 9.0058423,8.267091 0.019947,6.052033 4.3581927,-0.211368 -0.03629,-0.394881 L 9.9180634,13.515242 9.6494141,8.1456664 Z"
-       id="path19" />
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 256 256" style="enable-background:new 0 0 256 256;" xml:space="preserve">
+<path d="M83.1,186.7h10.5l10.6-42.2v42.2h10.1V133H98l-9.7,36.7L78.7,133H62.4v53.7h10.1v-42.2L83.1,186.7z M156.3,80v-9.1h-42.6V80
+	h15.9v44.6h10.9V80H156.3z M72.4,92V71H61.6v53.7h10.9v-23.4h21.2v23.4h10.9V71H93.6v21.2L72.4,92L72.4,92z M165,177.7h-26.9v-44.2
+	h-11v53.2h37.7v-9H165z M198.7,65.8h8.9l-15.5,117.8h-8.7L198.7,65.8z M256,134.8l-42.4,34v-22.1l29.5-21.4l-29.5-21.2V82.4
+	l42.4,33.8V134.8z M0,116.1l42.4-33.8v22.1l-29.5,20.8l29.5,21.6v22L0,134.9C0,134.9,0,116.1,0,116.1z"/>
 </svg>
