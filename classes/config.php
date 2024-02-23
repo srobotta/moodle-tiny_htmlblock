@@ -92,7 +92,7 @@ class config {
      * if the setting maxcatlevels is > 0. Also if an category id is in $keepselected, then the category is contained,
      * even though it might be at a lower level than desired.
      *
-     * @param int[] $keepselected
+     * @param int[]|null $keepselected
      * @return array
      * @throws \dml_exception
      */

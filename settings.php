@@ -24,8 +24,8 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-use \tiny_htmlblock\config;
-use \tiny_htmlblock\plugininfo;
+use tiny_htmlblock\config;
+use tiny_htmlblock\plugininfo;
 
 $ADMIN->add('editortiny', new admin_category(plugininfo::COMPONENT, new lang_string('pluginname', plugininfo::COMPONENT)));
 
