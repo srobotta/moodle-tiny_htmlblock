@@ -1,6 +1,6 @@
 # Moodle Tiny editor HTML Block plugin
 
-![Release](https://img.shields.io/badge/Release-1.1-blue.svg)
+![Release](https://img.shields.io/badge/Release-1.2-blue.svg)
 ![Supported](https://img.shields.io/badge/Moodle-4.1+-orange.svg)
 [![Moodle Plugin CI](https://github.com/srobotta/moodle-tiny_htmlblock/workflows/Moodle%20Plugin%20CI/badge.svg?branch=master)](https://github.com/srobotta/moodle-tiny_htmlblock/actions?query=workflow%3A%22Moodle+Plugin+CI%22+branch%3Amaster)
 [![License GPL-3.0](https://img.shields.io/github/license/srobotta/moodle-tiny_htmlblock?color=lightgrey)](https://github.com/srobotta/moodle-tiny_htmlblock/blob/master/LICENSE)
@@ -142,6 +142,13 @@ What is missing/not working:
   that specific tag.
 
 ## Version History
+
+### 1.2
+- Fix [tiny/htmlblock:viewmenu does not seem to have any effect #2](https://github.com/srobotta/moodle-tiny_htmlblock/issues/2)
+- Fix [Module and course settings not accessible #4](https://github.com/srobotta/moodle-tiny_htmlblock/issues/4)
+- Fix phpcs issues that were reported during the review process.
+- New SVG icon for the toolbar and the plugin itself.
+- Improved language string.
 
 ### 1.1
 - Fix compatibility issue with Moodle 4.3
