@@ -75,7 +75,7 @@ class plugininfo extends plugin implements plugin_with_menuitems, plugin_with_bu
 
         $currentcat = null;
         if ($PAGE->course) {
-            $currentcat = \core_course_category::get($PAGE->course->category);
+            $currentcat = \core_course_category::get($PAGE->course->category, 0 /* IGNORE_MISSING */);
         }
 
         return [
