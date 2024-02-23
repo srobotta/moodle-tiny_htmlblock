@@ -73,6 +73,9 @@ class plugininfo extends plugin implements plugin_with_menuitems, plugin_with_bu
                                                                 ?editor $editor = null): array {
         global $PAGE;
 
+        if (!has_capability('tiny/htmlblock:viewmenu', $context)) {
+            return ['htmlblocks' => []];
+        }
         $currentcat = null;
         if ($PAGE->course) {
             $currentcat = \core_course_category::get($PAGE->course->category, 0 /* IGNORE_MISSING */);
