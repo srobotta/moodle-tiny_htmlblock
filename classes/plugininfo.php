@@ -55,8 +55,28 @@ class plugininfo extends plugin implements plugin_with_menuitems, plugin_with_bu
      */
     public static function get_available_buttons(): array {
         return [
-            'tiny_fontcolor/tiny_htmlblock_btn',
+            'tiny_htmlblock/tiny_htmlblock_btn',
         ];
+    }
+
+    /**
+     * Is the plugin enabled? This is the case when the capabilities are meet. However,
+     * if there are no html blocks defined for the current context, then the button and
+     * menu item do not appear either.
+     *
+     * @param context $context The context that the editor is used within
+     * @param array $options The options passed in when requesting the editor
+     * @param array $fpoptions The filepicker options passed in when requesting the editor
+     * @param editor|null $editor The editor instance in which the plugin is initialised
+     * @return boolean
+     */
+    public static function is_enabled(
+        context $context,
+        array $options,
+        array $fpoptions,
+        ?editor $editor = null
+    ): bool {
+        return has_capability('tiny/htmlblock:add', $context);
     }
 
     /**
@@ -73,9 +93,6 @@ class plugininfo extends plugin implements plugin_with_menuitems, plugin_with_bu
                                                                 ?editor $editor = null): array {
         global $PAGE;
 
-        if (!has_capability('tiny/htmlblock:viewmenu', $context)) {
-            return ['htmlblocks' => []];
-        }
         $currentcat = null;
         if ($PAGE->course) {
             $currentcat = \core_course_category::get($PAGE->course->category, 0 /* IGNORE_MISSING */);

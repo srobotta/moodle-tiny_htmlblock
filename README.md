@@ -1,6 +1,6 @@
 # Moodle Tiny editor HTML Block plugin
 
-![Release](https://img.shields.io/badge/Release-1.2-blue.svg)
+![Release](https://img.shields.io/badge/Release-1.3-blue.svg)
 ![Supported](https://img.shields.io/badge/Moodle-4.1+-orange.svg)
 [![Moodle Plugin CI](https://github.com/srobotta/moodle-tiny_htmlblock/workflows/Moodle%20Plugin%20CI/badge.svg?branch=master)](https://github.com/srobotta/moodle-tiny_htmlblock/actions?query=workflow%3A%22Moodle+Plugin+CI%22+branch%3Amaster)
 [![License GPL-3.0](https://img.shields.io/github/license/srobotta/moodle-tiny_htmlblock?color=lightgrey)](https://github.com/srobotta/moodle-tiny_htmlblock/blob/master/LICENSE)
@@ -142,6 +142,11 @@ What is missing/not working:
   that specific tag.
 
 ## Version History
+
+### 1.3
+- Additional fixes from the approval feedback.
+- Rename capability to `tiny/htmlblock:add`.
+- Different styling in the html block list in the dialogue.
 
 ### 1.2
 - Fix [tiny/htmlblock:viewmenu does not seem to have any effect #2](https://github.com/srobotta/moodle-tiny_htmlblock/issues/2)

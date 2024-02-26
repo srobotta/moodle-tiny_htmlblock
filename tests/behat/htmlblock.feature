@@ -34,11 +34,10 @@ Feature: Tiny editor admin settings for htmlblock plugin
     When I log in as "admin"
     And I open my profile in edit mode
     And I wait until the page is ready
-    When I click on the "Insert > HTML blocks" menu item for the "Description" TinyMCE editor
+    And I click on the "Insert > HTML blocks" menu item for the "Description" TinyMCE editor
     And I wait "1" seconds
     Then I should see "Go home X"
     And I should not see "Text framed"
-    And I click on "Cancel" "button" in the "Tiny HTML Blocks" "dialogue"
     When I am on the "C1" "Course" page logged in as "admin"
     And I turn editing mode on
     And I edit the section "1"
@@ -58,5 +57,5 @@ Feature: Tiny editor admin settings for htmlblock plugin
     And I click on the "HTML blocks" button for the "Description" TinyMCE editor
     And I click on "li[title='Heading X3']" "css_element"
     And I click on "Insert" "button" in the "Tiny HTML Blocks" "dialogue"
-    When I click on "Update profile" "button"
+    And I click on "Update profile" "button"
     Then I should see "Go homez"

@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $capabilities = [
-    'tiny/htmlblock:viewmenu' => [
+    'tiny/htmlblock:add' => [
         'captype'      => 'write',
         'contextlevel' => CONTEXT_COURSE,
         'archetypes' => [
