@@ -26,7 +26,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'tiny_htmlblock';
 $plugin->release = '1.4';
-$plugin->version = 2024022600;
+$plugin->version = 2024043000;
 $plugin->requires = 2022112800;
 $plugin->maturity = MATURITY_STABLE;
 $plugin->supported = [401, 404];

@@ -146,6 +146,7 @@ What is missing/not working:
 ### 1.4
 - Support Moodle 4.4 and PHP 8.3.
 - Lift software maturity to stable.
+- Fix [Improvement: Visual elements in the administration page #6](https://github.com/srobotta/moodle-tiny_htmlblock/issues/6)
 
 ### 1.3
 - Additional fixes from the approval feedback.
