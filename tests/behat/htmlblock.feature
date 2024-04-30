@@ -42,7 +42,7 @@ Feature: Tiny editor admin settings for htmlblock plugin
     And I turn editing mode on
     And I edit the section "1"
     And I wait until the page is ready
-    And I click on the "Insert > HTML blocks" menu item for the "Summary" TinyMCE editor
+    And I click on the "Insert > HTML blocks" menu item for the "Description" TinyMCE editor
     And I wait "1" seconds
     Then I should see "Go home X"
     And I should see "Text framed"
