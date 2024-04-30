@@ -182,4 +182,14 @@ export const init = name => {
     });
   }
   rowcount = document.querySelectorAll(selectorRows).length;
+  document.head.appendChild(document.createElement('style')).textContent = `
+    .row.htmlblock {
+      padding-bottom: 0.5rem;
+    }
+    .row.htmlblock:nth-of-type(2n+1) {
+      border-top: 1px solid #dee2e6;
+      border-bottom: 1px solid #dee2e6;
+      background-color: rgba(0,0,0,.03);
+    }
+  `;
 };

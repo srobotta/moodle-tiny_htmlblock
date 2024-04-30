@@ -20,7 +20,37 @@ Feature: Tiny editor admin settings for htmlblock plugin
     Then I should see "Go to home"
 
   Scenario: Check the category setting of the  HTML block items.
-    Given the following config values are set as admin:
+    Given the site is running Moodle version 4.3 or lower
+    And the following config values are set as admin:
+      | items | [{"name":"Heading XXZ1","html":"<h4>Go home X<\/h4>","cat":""},{"name":"Block AB","html":"<span style=\"border 1px solid #aaaaaa;\">Text framed<\/span>","cat":[1]}] | tiny_htmlblock |
+    And the following "categories" exist:
+      | id | name | idnumber | parent |
+      | 1  | Test | test     | 0      |
+    And the following "courses" exist:
+      | fullname | shortname | category |
+      | Course 1 | C1        | 0        |
+    And the following "activities" exist:
+      | activity | course | section | intro | idnumber |
+      | label    | C1     | 1       | Label | C1LABEL1 |
+    When I log in as "admin"
+    And I open my profile in edit mode
+    And I wait until the page is ready
+    And I click on the "Insert > HTML blocks" menu item for the "Description" TinyMCE editor
+    And I wait "1" seconds
+    Then I should see "Go home X"
+    And I should not see "Text framed"
+    When I am on the "C1" "Course" page logged in as "admin"
+    And I turn editing mode on
+    And I edit the section "1"
+    And I wait until the page is ready
+    And I click on the "Insert > HTML blocks" menu item for the "Summary" TinyMCE editor
+    And I wait "1" seconds
+    Then I should see "Go home X"
+    And I should see "Text framed"
+
+  Scenario: Check the category setting of the  HTML block items.
+    Given the site is running Moodle version 4.4 or higher
+    And the following config values are set as admin:
       | items | [{"name":"Heading XXZ1","html":"<h4>Go home X<\/h4>","cat":""},{"name":"Block AB","html":"<span style=\"border 1px solid #aaaaaa;\">Text framed<\/span>","cat":[1]}] | tiny_htmlblock |
     And the following "categories" exist:
       | id | name | idnumber | parent |
