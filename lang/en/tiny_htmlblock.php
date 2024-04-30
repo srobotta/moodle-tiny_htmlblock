@@ -28,24 +28,22 @@ defined('MOODLE_INTERNAL') || die();
 $string['blocks'] = 'HTML Blocks';
 $string['blocks_desc'] = 'HTML blocks consist of HTML code itself. Furthermore, the name field may contain an expression or short description to identify the purpose of this HTML block. When a category is selected, the HTML block in the editor will be shown only, if a course in this category hierarchy is edited.';
 $string['buttontext'] = 'Insert predefined HTML blocks';
-$string['dlgintro'] = 'Select one of these blocks to insert it at the current position. Placeholder texts can be modified once the block is inserted.';
 $string['dlginsert'] = 'Insert';
+$string['dlgintro'] = 'Select one of these blocks to insert it at the current position. Placeholder texts can be modified once the block is inserted.';
 $string['helplinktext'] = 'HTML Blocks';
 $string['htmlblock:add'] = 'Add predefined HTML blocks in editor';
 $string['labelaction'] = 'Action';
 $string['labelcat'] = 'Category';
-$string['labelname'] = 'Name';
 $string['labelhtml'] = 'HTML Code';
+$string['labelname'] = 'Name';
 $string['maxcatlevels'] = 'Category levels to show';
 $string['maxcatlevels_all'] = 'all';
 $string['maxcatlevels_desc'] = 'When defining HTML blocks below, limit the options to some levels only in the category selector. Thus, the category selector does not show all categories of any level.';
 $string['menutext'] = 'HTML blocks';
 $string['pluginname'] = 'Tiny HTML Blocks';
+$string['privacy:metadata'] = 'The Tiny HTML Blocks plugin does not store any personal data about any user.';
 $string['settings'] = 'Predefine HTML Blocks for TinyMCE';
 $string['tooltipadd'] = 'Add a new entry';
 $string['tooltipdel'] = 'Remove this entry';
 $string['tooltipdown'] = 'Move this entry down';
 $string['tooltipup'] = 'Move this entry up';
-
-// PRIVACY.
-$string['privacy:metadata'] = 'The Tiny HTML Blocks plugin does not store any personal data about any user.';
