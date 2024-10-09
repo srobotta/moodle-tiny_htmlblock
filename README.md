@@ -1,6 +1,6 @@
 # Moodle Tiny editor HTML Block plugin
 
-![Release](https://img.shields.io/badge/Release-1.4-blue.svg)
+![Release](https://img.shields.io/badge/Release-1.5-blue.svg)
 ![Supported](https://img.shields.io/badge/Moodle-4.1+-orange.svg)
 [![Moodle Plugin CI](https://github.com/srobotta/moodle-tiny_htmlblock/workflows/Moodle%20Plugin%20CI/badge.svg?branch=master)](https://github.com/srobotta/moodle-tiny_htmlblock/actions?query=workflow%3A%22Moodle+Plugin+CI%22+branch%3Amaster)
 [![License GPL-3.0](https://img.shields.io/github/license/srobotta/moodle-tiny_htmlblock?color=lightgrey)](https://github.com/srobotta/moodle-tiny_htmlblock/blob/master/LICENSE)
@@ -142,6 +142,9 @@ What is missing/not working:
   that specific tag.
 
 ## Version History
+
+### 1.5
+- Support for Moodle 4.5
 
 ### 1.4
 - Support Moodle 4.4 and PHP 8.3.
