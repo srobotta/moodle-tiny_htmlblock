@@ -144,7 +144,7 @@ What is missing/not working:
 ## Version History
 
 ### 1.5
-- Support for Moodle 4.5
+- Add Moodle 4.5 to the CI pipeline.
 
 ### 1.4
 - Support Moodle 4.4 and PHP 8.3.

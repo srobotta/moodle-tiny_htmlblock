@@ -141,7 +141,7 @@ class config {
      * @return array
      * @throws \dml_exception
      */
-    public function get_blocks_for_editor(\core_course_category $category = null): array {
+    public function get_blocks_for_editor(?\core_course_category $category = null): array {
         // First fetch the setting with the html blocks.
         $blocks = $this->get_blocks_from_setting();
 
