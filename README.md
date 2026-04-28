@@ -1,13 +1,16 @@
 # Moodle Tiny editor HTML Block plugin
 
-![Release](https://img.shields.io/badge/Release-1.5-blue.svg)
-![Supported](https://img.shields.io/badge/Moodle-4.1+-orange.svg)
+![Release](https://img.shields.io/badge/Release-1.6-blue.svg)
+![Supported](https://img.shields.io/badge/Moodle-5.0+-orange.svg)
 [![Moodle Plugin CI](https://github.com/srobotta/moodle-tiny_htmlblock/workflows/Moodle%20Plugin%20CI/badge.svg?branch=master)](https://github.com/srobotta/moodle-tiny_htmlblock/actions?query=workflow%3A%22Moodle+Plugin+CI%22+branch%3Amaster)
 [![License GPL-3.0](https://img.shields.io/github/license/srobotta/moodle-tiny_htmlblock?color=lightgrey)](https://github.com/srobotta/moodle-tiny_htmlblock/blob/master/LICENSE)
 [![GitHub contributors](https://img.shields.io/github/contributors/srobotta/moodle-tiny_htmlblock)](https://github.com/srobotta/moodle-tiny_htmlblock/graphs/contributors)
 
 A plugin for the Moodle TinyMCE editor to insert predefined HTML blocks when editing a text
 in Moodle.
+
+**Note**: There is a similar plugin called [Course Elements](https://github.com/bycs-lp/moodle-tiny_elements)
+that is more sophisticated and lets you define better designs that this plugin.
 
 ## Overview
 
@@ -142,6 +145,9 @@ What is missing/not working:
   that specific tag.
 
 ## Version History
+
+### 1.6
+- Make the plugin compatible with Moodle 5.2 and drop support for Moodle < 5.0.
 
 ### 1.5
 - Add Moodle 4.5 to the CI pipeline.

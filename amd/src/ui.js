@@ -13,8 +13,8 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+import Modal from 'core/modal';
 import ModalEvents from 'core/modal_events';
-import ModalFactory from 'core/modal_factory';
 import Mustache from 'core/mustache';
 import {get_string as getString} from 'core/str';
 import {component} from './common';
@@ -83,7 +83,7 @@ const handleAction = async function(editor) {
   }
 
   // Create a modal dialogue.
-  _modal = await ModalFactory.create({
+  _modal = await Modal.create({
     title: STR.title,
     templateContext: {
       elementid: _editor.id
