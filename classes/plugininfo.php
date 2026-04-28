@@ -30,8 +30,10 @@ use editor_tiny\plugin_with_configuration;
  * @copyright   2023 Stephan Robotta <stephan.robotta@bfh.ch>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class plugininfo extends plugin implements plugin_with_menuitems, plugin_with_buttons, plugin_with_configuration {
-
+class plugininfo extends plugin implements
+    plugin_with_buttons,
+    plugin_with_configuration,
+    plugin_with_menuitems {
     /**
      * The internal name of the plugin.
      * @var string
@@ -89,8 +91,12 @@ class plugininfo extends plugin implements plugin_with_menuitems, plugin_with_bu
      * @return array
      * @throws \dml_exception
      */
-    public static function get_plugin_configuration_for_context(context $context, array $options, array $fpoptions,
-                                                                ?editor $editor = null): array {
+    public static function get_plugin_configuration_for_context(
+        context $context,
+        array $options,
+        array $fpoptions,
+        ?editor $editor = null
+    ): array {
         global $PAGE;
 
         $currentcat = null;

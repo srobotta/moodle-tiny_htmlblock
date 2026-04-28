@@ -35,5 +35,3 @@ if ($ADMIN->fulltree) {
     $config = new config();
     $config->add_admin_settings($settings);
 }
-
-

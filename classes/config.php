@@ -28,7 +28,6 @@ namespace tiny_htmlblock;
  * Helper class to handle the settings for the plugin.
  */
 class config {
-
     /**
      * Add settings to admin page for this plugin.
      * @param \admin_settingpage $settings
@@ -147,7 +146,7 @@ class config {
 
         // Fetch all blocks and run format_string on its name to possibly apply the mlang filter when used in the name.
         $blocks = array_map(
-            function($b){
+            function ($b) {
                 format_string(trim($b['name']));
                 return $b;
             },
@@ -164,10 +163,13 @@ class config {
             }
             // We are in a category and the html block has this category set as well, or any of its parents is
             // defined as the html block.
-            if ($category !== null && (
+            if (
+                $category !== null &&
+                (
                     \in_array($category->id, $blocks[$row]['cat']) ||
                     !empty(\array_intersect($category->get_parents(), $blocks[$row]['cat']))
-                )) {
+                )
+            ) {
                 continue;
             }
             // Either, we are on a page with a category but the current html block does not contain this

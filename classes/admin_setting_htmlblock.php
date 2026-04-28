@@ -34,7 +34,6 @@ use admin_setting;
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class admin_setting_htmlblock extends admin_setting {
-
     /**
      * Placeholder that is used as a value for the value of the original settings hidden input field.
      * @var string
@@ -49,7 +48,7 @@ class admin_setting_htmlblock extends admin_setting {
 
     /**
      * The current config object.
-     * @var $config
+     * @var config
      */
     private $config;
 
